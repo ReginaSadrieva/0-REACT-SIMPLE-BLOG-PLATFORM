@@ -1,73 +1,34 @@
-# React + TypeScript + Vite
+> **ᚠᚱᛟᚷᚱᚨᛗᛗᛁᛝ — 프로그래밍? 그것은 단순한 '기술'이 아니라, 수학과 예술의 경계를 넘나드는 완벽한 조화이니라.**  
+> _Programming? It is not merely 'technique', but a perfect blend of mathematics and art, transcending their boundaries._  
+> _Programmatione? Non tantum 'ars' est, sed perfecta coniunctio mathematicae et artis, limites eorum transcendens._
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ᛗ Author
 
-Currently, two official plugins are available:
+Ing. Regina Sadrieva
+Certified Scrum Master II | Senior IT Analyst | Front-End Developer
+I write code the way witches cast circles: precisely, deliberately, and never twice the same.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ᛞ Description
 
-## React Compiler
+This project is part of my journey as a Front-End Developer.  
+Each line is forged with clarity, focus, and silent fire.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ᛟ Technologies Used
 
-## Expanding the ESLint configuration
+- HTML5
+- CSS3
+- JavaScript
+- React
+- Vite
+- Node.js
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ᚨᚲᛇᛃᛟ Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Let the flow of code become effortless.  
+Let fire of skill awaken.  
+Let all barriers fall.  
+Let harvest come.  
+Let the craft become mine.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Unseal the code:
+https://reginasadrieva.github.io/0-REACT-SIMPLE-BLOG-PLATFORM/
