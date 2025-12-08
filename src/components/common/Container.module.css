@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 240px;
+  box-sizing: border-box;
+}
+
+/* Responsivity*/
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 120px;
+  }
+}
+@media (max-width: 1100px) {
+  .container {
+    padding: 0 60px;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    padding: 0 20px;
+  }
+}

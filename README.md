@@ -17,7 +17,7 @@ Each line is forged with clarity, focus, and silent fire.
 
 - HTML5
 - CSS3
-- JavaScript
+- TypeScript
 - React
 - Vite
 - Node.js
