@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import newPostIcon from '../../assets/icons/new-post.svg';
 import settingsIcon from '../../assets/icons/settings.svg';
 import profileIcon from '../../assets/icons/profile.svg';

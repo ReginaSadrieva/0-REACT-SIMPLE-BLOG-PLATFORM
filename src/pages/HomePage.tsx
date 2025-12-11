@@ -4,10 +4,10 @@ import Container from '../components/common/Container';
 export default function HomePage() {
   return (
     <>
-      <Banner /> {/* на всю ширину */}
+      <Banner /> {/* on whole width */}
       <Container>
         {' '}
-        {/* только статьи и теги */}
+        {/* only articles and tags */}
         <div
           style={{
             minHeight: '1000px',

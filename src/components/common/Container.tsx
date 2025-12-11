@@ -1,4 +1,4 @@
-import styles from './Container.module.css';
+import styles from './Container.module.scss';
 import type { ReactNode } from 'react';
 
 interface Props {

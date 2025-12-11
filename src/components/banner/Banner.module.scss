@@ -1,0 +1,38 @@
+.banner {
+  width: 100%;
+  height: 190px;
+  background-color: #61bb61;
+  padding: 60px 20px;
+  text-align: center;
+  margin: 0 0 40px 0;
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    font:
+      700 56px 'Titillium Web',
+      sans-serif;
+    color: white;
+    margin: 0 0 16px 0;
+
+    // white underline below the title
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 2px;
+      background-color: white;
+    }
+  }
+
+  &__subtitle {
+    font:
+      400 24px 'Source Sans Pro',
+      sans-serif;
+    color: white;
+    margin: 0;
+    opacity: 0.9;
+  }
+}
