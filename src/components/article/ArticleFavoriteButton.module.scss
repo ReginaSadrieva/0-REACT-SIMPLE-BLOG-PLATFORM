@@ -1,3 +1,16 @@
+// ------------------------------------------------------------------
+// Purpose: Favorite (like) button shown in the top-right corner of every article card.
+//
+// Visual details (100 % from Figma):
+//   • Size: 77 × 40 px
+//   • Border: 1px solid #5cb85c
+//   • Corner radius: 8px
+//   • Icon: heart-green.svg, 20×20 px
+//   • Text: Source Sans Pro, Regular, 12.8px, green
+//   • Hover: green background, white text & heart (via filter)
+//   • Currently disabled (per Phase 1 requirements)
+// ------------------------------------------------------------------
+
 .favorite {
   display: flex;
   align-items: center;
@@ -27,6 +40,7 @@
     background-color: var(--green-primary);
     color: white;
 
+    // Turn green heart icon white on hover
     .favorite__icon {
       filter: brightness(0) invert(1);
     }

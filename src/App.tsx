@@ -1,3 +1,18 @@
+// ------------------------------------------------------------------
+// Purpose: Root application component and router configuration.
+//          This is the entry point for all routing in the app.
+//
+// Why we use BrowserRouter here:
+//   • Central place for all routes
+//   • basename needed for GitHub Pages deployment
+//   • Layout is shared across routes (Header + container logic)
+//
+// Current routes (Phase 1):
+//   • /0-REACT-SIMPLE-BLOG-PLATFORM/         → HomePage (with Layout)
+//   • /0-REACT-SIMPLE-BLOG-PLATFORM/articles → same as home (requirement)
+//   • Future: /articles/:slug                → Article detail page
+// ------------------------------------------------------------------
+
 import './index.scss';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -6,10 +21,18 @@ import Layout from './components/layout/Layout';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/0-REACT-SIMPLE-BLOG-PLATFORM">
       <Routes>
-        <Route path="/0-REACT-SIMPLE-BLOG-PLATFORM/" element={<Layout />}>
+        {/* All pages use the same Layout (Header + Container wrapper) */}
+        <Route path="/" element={<Layout />}>
+          {/* Index route = home page */}
           <Route index element={<HomePage />} />
+
+          {/* Additional route from requirements – shows the same home page */}
+          <Route path="articles" element={<HomePage />} />
+
+          {/* Future route for individual articles (Phase 2) */}
+          {/* <Route path="articles/:slug" element={<ArticlePage />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>

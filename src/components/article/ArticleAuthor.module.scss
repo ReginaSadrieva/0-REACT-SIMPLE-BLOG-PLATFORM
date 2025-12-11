@@ -1,8 +1,16 @@
+// ------------------------------------------------------------------
+// Purpose: Author block (avatar + name + date) in the top-left of each article card.
+//
+// Visual details (Figma):
+//   • Avatar: 46×46 px, green background, profile.svg centered
+//   • Name: Source Sans Pro, SemiBold, 16px, green (#5cb85c)
+//   • Date: Source Sans Pro, Regular, 12.8px, gray (#aaaaaa)
+//   • 10px gap between avatar and text
+// ------------------------------------------------------------------
 .author {
   display: flex;
   align-items: center;
-  gap: 10px;
-  
+  gap: 10px; // space between avatar and text
 
   &__avatar {
     width: 46px;

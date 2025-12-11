@@ -1,14 +1,26 @@
+// ------------------------------------------------------------------
+// Purpose: Styles for the full-width green hero banner shown only on the home page.
+//
+// Visual details (100 % from Figma):
+//   • Width: 100% (outside Container)
+//   • Height: 190px
+//   • Background: #61bb61 (var(--green-dark))
+//   • Vertical padding: 48px (top & bottom)
+//   • Title: Titillium Web, Bold, 56px, white + white underline
+//   • Subtitle: Source Sans Pro, Regular, 24px, white, 90% opacity
+//   • Centered both vertically and horizontally using flex
+// ------------------------------------------------------------------
+
 .banner {
   width: 100%;
   height: 190px;
-  background-color: var(--green-dark);
+  background-color: var(--green-dark); // #61bb61
   padding: 48px 20px;
   text-align: center;
   margin: 0 0 40px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   flex-direction: column;
 
   &__title {
@@ -18,9 +30,9 @@
       700 56px 'Titillium Web',
       sans-serif;
     color: white;
-    margin: 0 0 -8px 0;
+    margin: 0 0 -8px 0; // pulls subtitle closer
 
-    // white underline below the title
+    // White underline below the title
     &::after {
       content: '';
       position: absolute;

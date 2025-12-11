@@ -1,6 +1,24 @@
-/* Global styles + exact colors from Figma */
+// ------------------------------------------------------------------
+// Purpose: Global stylesheet for the entire application.
+//          Defines base styles, fonts, resets, CSS variables, and utility classes.
+//
+// Why this file is the main CSS entry point:
+//   • Imported in main.tsx → applies to all components
+//   • Keeps all global styles in one place for easy maintenance
+//   • No component-specific styles here → only app-wide rules
+//
+// How it works:
+//   • Imports Google Fonts for Titillium Web and Source Sans Pro
+//   • Resets margins, padding, and box-sizing for consistency across browsers
+//   • Sets default body font, background, and text color
+//   • Defines CSS variables for colors (from Figma design)
+//   • Provides small utility classes for quick reuse (e.g. .text-green)
+// ------------------------------------------------------------------
+
+/* Import fonts from Google Fonts – Titillium Web for titles, Source Sans Pro for body text */
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap');
 
+/* CSS reset – ensures consistent rendering across browsers */
 *,
 *::before,
 *::after {
@@ -9,39 +27,41 @@
   padding: 0;
 }
 
+/* Default body styles – applied to the whole app */
 body {
-  font-family: 'Source Sans Pro', sans-serif;
-  background-color: #ffffff; 
-  color: #333333;
+  font-family: 'Source Sans Pro', sans-serif; // Main font for text
+  background-color: #ffffff; // Pure white background as per Figma
+  color: #333333; // Default text color
 }
 
+/* Global link styles – remove underline, inherit color */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Exact colors from Figma design */
+/* CSS variables – exact colors from Figma design */
 :root {
-  --green-primary: #5cb85c;
-  --green-hover: #4aa34a;
-  --green-dark: #61bb61;
-  --gray-text: #aaaaaa;
-  --black-title: #333333;
-  --white: #ffffff;
-  --border-light: #e6e6e6;
-  --bg-gray: #f5f5f5;
+  --green-primary: #5cb85c; // Main green for buttons, accents
+  --green-hover: #4aa34a; // Darker green for hover states
+  --green-dark: #61bb61; // Alternative green shade
+  --gray-text: #aaaaaa; // Light gray for secondary text
+  --black-title: #333333; // Dark gray for titles and main text
+  --white: #ffffff; // Pure white
+  --border-light: #e6e6e6; // Light border color
+  --bg-gray: #f5f5f5; // Light gray background for elements
 }
 
-/* Small utility classes – we'll use them a lot */
+/* Utility classes – reusable for common styles across the app */
 .text-green {
-  color: var(--green-primary);
+  color: var(--green-primary); // Applies main green color to text
 }
 .text-gray {
-  color: var(--gray-text);
+  color: var(--gray-text); // Applies light gray to text
 }
 .bg-green {
-  background-color: var(--green-primary);
+  background-color: var(--green-primary); // Main green background
 }
 .hover-green:hover {
-  background-color: var(--green-hover);
+  background-color: var(--green-hover); // Darker green on hover
 }

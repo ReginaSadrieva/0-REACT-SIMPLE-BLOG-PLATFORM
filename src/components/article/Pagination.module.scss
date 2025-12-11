@@ -1,8 +1,22 @@
+// ------------------------------------------------------------------
+// Purpose: Server-side pagination controls displayed below the article list.
+//
+// Visual details (100 % from Figma):
+//   • Buttons: 41×44 px
+//   • No gap between buttons
+//   • No corner radius (sharp corners)
+//   • Active: solid green background (#5cb85c), white text
+//   • Inactive: white background, green border & text
+//   • Font: Source Sans Pro, Regular, 12.8px
+//   • Centered horizontally
+//   • 16px margin from last article card
+// ------------------------------------------------------------------
+
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 0px;
-  margin-top: 16px; // from last card
+  gap: 0; // no space between page buttons
+  margin-top: 16px; // distance from last article card
   padding: 20px 0;
 }
 
@@ -10,7 +24,7 @@
   width: 41px;
   height: 44px;
   border: 1px solid var(--green-primary);
-  border-radius: 0%;
+  border-radius: 0; // sharp corners as in design
   background-color: white;
   color: var(--green-primary);
   font:
@@ -27,6 +41,6 @@
   }
 
   &:hover:not(&--active) {
-    background-color: rgba(92, 184, 92, 0.1);
+    background-color: rgba(92, 184, 92, 0.1); // light green tint on hover
   }
 }

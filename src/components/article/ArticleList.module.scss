@@ -1,3 +1,12 @@
+// ------------------------------------------------------------------
+// Purpose: Wrapper for the list of article cards + pagination.
+//          Only adds a small top margin to separate from PopularTags.
+//
+// Why so minimal:
+//   • All spacing and layout are handled by child components (ArticleCard, Pagination)
+//   • Keeps the file tiny and focused
+// ------------------------------------------------------------------
+
 .list {
-  margin-top: 16px; // from Popular tags
+  margin-top: 16px; // 16px gap between PopularTags and first article card
 }

@@ -1,10 +1,26 @@
+// ------------------------------------------------------------------
+// Purpose: Universal responsive container used on every page below the header.
+//          Guarantees consistent content width and side padding across the whole app.
+//
+// Why we use it:
+//   • Eliminates repetitive max-width/padding code in every component
+//   • Single source of truth for layout width
+//   • Fully responsive – automatically reduces side padding on smaller screens
+//
+// Design requirements (Figma):
+//   • Desktop: 1280px content width + 240px padding on each side
+//   • Tablet & mobile: padding gradually decreases
+//   • No horizontal scroll on any screen size
+// ------------------------------------------------------------------
+
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 240px;
+  padding: 0 240px; // desktop: 240px left & right
   box-sizing: border-box;
 
+  /* Responsive padding reduction */
   @media (max-width: 1400px) {
     padding: 0 120px;
   }

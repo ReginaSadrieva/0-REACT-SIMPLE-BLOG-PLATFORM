@@ -1,14 +1,26 @@
+// ------------------------------------------------------------------
+// Purpose: Renders the list of tags at the bottom of each article card.
+//
+// Visual details (100 % from Figma):
+//   • Horizontal wrap layout
+//   • 8px gap between tags
+//   • Each tag: 12.8px Source Sans Pro, #aaaaaa text
+//   • 1px #aaaaaa border, 8px border-radius
+//   • Padding inside tag: 4px 10px
+//   • Bottom padding in container: 20px
+// ------------------------------------------------------------------
+
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 10px 20px 20px;
+  padding: 10px 20px 20px; // consistent with card content
 
   &__item {
     font:
       400 12.8px 'Source Sans Pro',
       sans-serif;
-    color: var(--gray-text);
+    color: var(--gray-text); // #aaaaaa
     border: 1px solid var(--gray-text);
     border-radius: 8px;
     padding: 4px 10px;

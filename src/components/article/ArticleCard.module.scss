@@ -1,35 +1,46 @@
+// ------------------------------------------------------------------
+// Purpose: Main card that displays one article preview.
+//
+// Layout (Figma):
+//   • White background, 1px #aaaaaa border, 8px radius
+//   • Top margin 16px from previous card / PopularTags
+//   • Header: author (left) + favorite button (right), 16px top padding
+//   • Content: title (32px, semi-bold) + description (16px, gray)
+//   • All internal spacing handled by child components
+// ------------------------------------------------------------------
+
 .card {
   background-color: white;
-  border: 1px solid var(--gray-text);
+  border: 1px solid var(--gray-text); // #aaaaaa
   border-radius: 8px;
-  margin-top: 16px; // from PopularTags
+  margin-top: 16px; // gap from PopularTags or previous card
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 16px 10px 0;
+    padding: 16px 10px 0; // 16px top, 10px left/right
   }
 
   &__content {
-    padding: 0 20px;
+    padding: 0 20px; // horizontal padding for title & text
   }
 
   &__title {
     font:
       600 32px 'Titillium Web',
       sans-serif;
-    color: var(--black-title);
+    color: var(--black-title); // #333333
     margin: 0 0 12px 0;
     line-height: 1.3;
-    word-break: break-word;
+    word-break: break-word; // long words wrap correctly
   }
 
   &__text {
     font:
       400 16px 'Source Sans Pro',
       sans-serif;
-    color: var(--gray-text);
+    color: var(--gray-text); // #aaaaaa
     margin: 0 0 20px 0;
     line-height: 1.5;
   }

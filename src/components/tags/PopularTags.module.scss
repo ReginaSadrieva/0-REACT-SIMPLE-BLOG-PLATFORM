@@ -1,29 +1,47 @@
+// ------------------------------------------------------------------
+// Purpose: Styles for the "Popular Tags" sidebar widget displayed on the home page.
+//
+// Why SCSS module:
+//   • Scoped styles – no risk of leaking to other components
+//   • BEM naming with nesting – clean and readable
+//   • Uses CSS variables from :root → consistent with the whole app
+//
+// Visual details (100 % from Figma):
+//   • White card with 1px #aaaaaa border
+//   • Corner radius: 8px
+//   • Inner padding: 16px
+//   • Top margin: 20px (distance from the green banner)
+//   • Title: Titillium Web, Bold, 16px, #333333
+//   • Tags: Source Sans Pro, SemiBold, 12.8px, #aaaaaa
+//   • Tag pills: 1px #aaaaaa border, transparent background, 8px radius, 8px gap
+// ------------------------------------------------------------------
+
 .popularTags {
   background-color: white;
-  border: 1px solid var(--gray-text);
+  border: 1px solid var(--gray-text); // #aaaaaa
   border-radius: 8px;
   padding: 16px;
-  margin-top: 20px; /* from the green banner */
+  margin-top: 20px; // 20px gap from the green banner
 
   &__title {
     font:
       700 16px 'Titillium Web',
       sans-serif;
-    color: var(--black-title);
+    color: var(--black-title); // #333333
     margin: 0 0 12px 0;
   }
 
   &__list {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 8px; // space between tags
   }
 
   &__tag {
     font:
       600 12.8px 'Source Sans Pro',
       sans-serif;
-    color: var(--gray-text);
+    color: var(--gray-text); // #aaaaaa
     background-color: transparent;
     padding: 6px 12px;
     border: 1px solid var(--gray-text);
