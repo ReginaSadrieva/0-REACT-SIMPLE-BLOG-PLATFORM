@@ -13,15 +13,6 @@ I write code the way witches cast circles: precisely, deliberately, and never tw
 This project is part of my journey as a Front-End Developer.  
 Each line is forged with clarity, focus, and silent fire.
 
-## ᛟ Technologies Used
-
-- HTML5
-- CSS3
-- TypeScript
-- React
-- Vite
-- Node.js
-
 ## ᚨᚲᛇᛃᛟ Getting Started
 
 Let the flow of code become effortless.  
