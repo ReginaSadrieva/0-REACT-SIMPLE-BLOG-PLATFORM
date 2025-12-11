@@ -1,7 +1,7 @@
 import Banner from '../components/banner/Banner';
 import Container from '../components/common/Container';
 import PopularTags from '../components/tags/PopularTags';
-import ArticleCard from '../components/article/ArticleCard';
+import ArticleList from '../components/article/ArticleList';
 
 export default function HomePage() {
   return (
@@ -9,7 +9,7 @@ export default function HomePage() {
       <Banner /> {/* on whole width */}
       <Container>
         <PopularTags />
-        <ArticleCard />
+        <ArticleList />
       </Container>
     </>
   );

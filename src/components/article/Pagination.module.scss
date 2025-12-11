@@ -1,0 +1,32 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  margin-top: 16px; // from last card
+  padding: 20px 0;
+}
+
+.pagination__item {
+  width: 41px;
+  height: 44px;
+  border: 1px solid var(--green-primary);
+  border-radius: 0%;
+  background-color: white;
+  color: var(--green-primary);
+  font:
+    400 12.8px 'Source Sans Pro',
+    sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--active {
+    background-color: var(--green-primary);
+    color: white;
+  }
+
+  &:hover:not(&--active) {
+    background-color: rgba(92, 184, 92, 0.1);
+  }
+}
