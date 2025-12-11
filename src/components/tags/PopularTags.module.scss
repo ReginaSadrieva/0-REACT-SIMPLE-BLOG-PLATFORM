@@ -1,0 +1,32 @@
+.popularTags {
+  background-color: white;
+  border: 1px solid var(--gray-text);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 20px; /* from the green banner */
+
+  &__title {
+    font:
+      700 16px 'Titillium Web',
+      sans-serif;
+    color: var(--black-title);
+    margin: 0 0 12px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__tag {
+    font:
+      600 12.8px 'Source Sans Pro',
+      sans-serif;
+    color: var(--gray-text);
+    background-color: transparent;
+    padding: 6px 12px;
+    border: 1px solid var(--gray-text);
+    border-radius: 8px;
+  }
+}
