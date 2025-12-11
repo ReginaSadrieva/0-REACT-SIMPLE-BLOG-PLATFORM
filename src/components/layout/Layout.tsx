@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react';
 import Header from './Header';
+import { Outlet } from 'react-router-dom';
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function Layout() {
   return (
     <>
       <Header />
       <main>
-        {children} {/* ← теперь всё, включая баннер, рендерится напрямую */}
+        <Outlet />
       </main>
     </>
   );

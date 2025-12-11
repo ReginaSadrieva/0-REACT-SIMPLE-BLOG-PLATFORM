@@ -1,13 +1,7 @@
-/* src/components/banner/HeroBanner.module.css */
-
 .banner {
- width: 100%;
+  width: 100%;
   height: 190px;
-  /* margin-left: calc(-50vw + 50%);  выезжает за контейнер влево и вправо */
   background-color: #61bb61;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   padding: 60px 20px;
   text-align: center;
   margin: 0 0 40px 0;
