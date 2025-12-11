@@ -16,7 +16,7 @@ const tags = [
 export default function PopularTags() {
   return (
     <aside className={styles.popularTags}>
-      <h2 className={styles.popularTags__title}>Popular Tags</h2>
+      <h2 className={styles.popularTags__title}>Popular tags</h2>
 
       <div className={styles.popularTags__list}>
         {tags.map((tag) => (

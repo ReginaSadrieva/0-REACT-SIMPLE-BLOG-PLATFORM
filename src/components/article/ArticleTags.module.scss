@@ -1,0 +1,16 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 20px 20px;
+
+  &__item {
+    font:
+      400 12.8px 'Source Sans Pro',
+      sans-serif;
+    color: var(--gray-text);
+    border: 1px solid var(--gray-text);
+    border-radius: 8px;
+    padding: 4px 10px;
+  }
+}

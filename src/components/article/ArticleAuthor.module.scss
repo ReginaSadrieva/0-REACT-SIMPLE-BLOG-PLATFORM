@@ -1,0 +1,36 @@
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+
+  &__avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    padding: 10px;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__name {
+    font:
+      600 16px 'Source Sans Pro',
+      sans-serif;
+    color: var(--green-primary);
+    margin: 0;
+  }
+
+  &__date {
+    font:
+      400 12.8px 'Source Sans Pro',
+      sans-serif;
+    color: var(--gray-text);
+    margin: 0;
+  }
+}

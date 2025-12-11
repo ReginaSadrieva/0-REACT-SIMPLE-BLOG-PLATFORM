@@ -1,6 +1,7 @@
 import Banner from '../components/banner/Banner';
 import Container from '../components/common/Container';
 import PopularTags from '../components/tags/PopularTags';
+import ArticleCard from '../components/article/ArticleCard';
 
 export default function HomePage() {
   return (
@@ -8,8 +9,7 @@ export default function HomePage() {
       <Banner /> {/* on whole width */}
       <Container>
         <PopularTags />
-        {/* then to be added here ArticleList + Pagination */}
-        <div style={{ height: '1000px' }}></div>
+        <ArticleCard />
       </Container>
     </>
   );
