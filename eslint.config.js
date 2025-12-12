@@ -56,7 +56,12 @@ export default tseslint.config(
       ],
 
       // Prettier как ошибка ESLint
-      'prettier/prettier': 'error',
+      'prettier/prettier': [
+        'error',
+        {
+          endOfLine: 'auto',
+        },
+      ],
 
       // Отключаем устаревшие правила
       'react/react-in-jsx-scope': 'off',
