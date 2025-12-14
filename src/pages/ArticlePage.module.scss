@@ -1,0 +1,92 @@
+// ------------------------------------------------------------------
+// Purpose: Styles for the individual article detail page.
+//
+// Layout (Figma):
+//   • Dark full-width banner (height 282px, black background)
+//   • Title: Titillium Web Bold 46px white, left-aligned within container
+//   • Author block with white circle around green avatar
+//   • Article body: Source Sans Pro Regular 16px black, left-aligned
+//   • Tags and bottom author/favorite section with exact spacing
+// ------------------------------------------------------------------
+
+.banner {
+  width: 100%;
+  height: 282px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  margin-top: 118px;
+
+  &__title {
+    font:
+      700 46px 'Titillium Web',
+      sans-serif;
+    color: white;
+    margin: 0;
+    line-height: 1.3;
+    word-break: break-word;
+    margin: 0 0 10px 0;
+  }
+}
+
+.authorSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 34px; // 34px from banner
+}
+
+.bottomAuthorSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 46px; // 46px from tags
+  padding-bottom: 60px;
+}
+
+.content {
+  margin-top: 34px; // 34px from top author section
+  font:
+    400 16px 'Source Sans Pro',
+    sans-serif;
+  color: black;
+  line-height: 1.6;
+  text-align: left;
+
+  // Markdown styling (tables, lists, etc. from remark-gfm)
+  & > * + * {
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+.favoriteButton {
+  height: 32px;
+  padding: 0 16px;
+  background-color: var(--green-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font:
+    400 12.8px 'Source Sans Pro',
+    sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomAuthorSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 46px; // 46px from tags
+  padding-bottom: 60px;
+}
+.error {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 24px;
+  color: red;
+}

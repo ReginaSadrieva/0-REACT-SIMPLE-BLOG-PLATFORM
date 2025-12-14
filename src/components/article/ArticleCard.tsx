@@ -22,6 +22,7 @@ import ArticleAuthor from './ArticleAuthor';
 import ArticleFavoriteButton from './ArticleFavoriteButton';
 import ArticleTags from './ArticleTags';
 import type { Article } from '../../api/articles';
+import { Link } from 'react-router-dom';
 
 /**
  * Props for ArticleCard.
@@ -41,21 +42,24 @@ interface Props {
  *
  * All measurements, colors, and fonts are taken directly from the design.
  */
+
 export default function ArticleCard({ article }: Props) {
   return (
     <article className={styles.card}>
-      {/* Top row – author info and favorite button */}
+      {/* Header row – author and favorite button */}
       <div className={styles.card__header}>
         <ArticleAuthor article={article} />
         <ArticleFavoriteButton article={article} />
       </div>
 
-      {/* Main content – title and description */}
+      {/* Main content – clickable title and description */}
       <div className={styles.card__content}>
-        {/* Article title – large, bold, wraps to multiple lines if needed */}
-        <h2 className={styles.card__title}>{article.title}</h2>
-
-        {/* Short preview text – truncated with ellipsis if too long */}
+        <Link
+          to={`/articles/${article.slug}`}
+          className={styles.card__titleLink}
+        >
+          <h2 className={styles.card__title}>{article.title}</h2>
+        </Link>
         <p className={styles.card__text}>{article.description}</p>
       </div>
 

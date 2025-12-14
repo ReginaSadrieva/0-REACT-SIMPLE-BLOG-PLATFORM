@@ -18,6 +18,7 @@ import './index.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Layout from './components/layout/Layout';
+import ArticlePage from './pages/ArticlePage';
 
 function App() {
   return (
@@ -31,8 +32,8 @@ function App() {
           {/* Additional route from requirements – shows the same home page */}
           <Route path="articles" element={<HomePage />} />
 
-          {/* Future route for individual articles (Phase 2) */}
-          {/* <Route path="articles/:slug" element={<ArticlePage />} /> */}
+          {/* Future route for individual articles */}
+          <Route path="articles/:slug" element={<ArticlePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

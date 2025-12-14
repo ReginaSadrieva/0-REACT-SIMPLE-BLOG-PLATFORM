@@ -1,6 +1,7 @@
 .header {
   background-color: white;
   height: 60px;
+  border-bottom: 1px solid var(--border-light);
 
   &__inner {
     width: 100%;

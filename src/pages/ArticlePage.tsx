@@ -1,9 +1,78 @@
+// ------------------------------------------------------------------
+// Purpose: Full article detail page displayed at /articles/{slug}.
+//
+// Requirements (Phase 1):
+//   • Fetch single article by slug from API
+//   • Render full body as Markdown (using react-markdown + remark-gfm)
+//   • Full-width dark banner with title
+//   • Author info (with white circle around green avatar)
+//   • Favorite button (non-functional for now)
+//   • Tags at the bottom
+//   • Responsive layout matching Figma design
+// ------------------------------------------------------------------
+
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import styles from './ArticlePage.module.scss';
+import ArticleAuthor from '../components/article/ArticleAuthor';
+import ArticleTags from '../components/article/ArticleTags';
+import Container from '../components/common/Container';
+import Loader from '../components/common/Loader';
+import { fetchArticles, type Article } from '../api/articles';
+
 export default function ArticlePage() {
+  const { slug } = useParams<{ slug: string }>();
+  const [article, setArticle] = useState<Article | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadArticle = async () => {
+      setLoading(true);
+      try {
+        const { articles } = await fetchArticles(1, 100); // load enough to find the slug
+        const found = articles.find((a) => a.slug === slug);
+        setArticle(found || null);
+      } catch {
+        setArticle(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    if (slug) loadArticle();
+  }, [slug]);
+
+  if (loading) return <Loader />;
+  if (!article) return <div className={styles.error}>Article not found</div>;
+
   return (
-    <div className="text-center py-20">
-      <h1 className="text-4xl font-bold text-[#333333]">
-        Article page – coming soon
-      </h1>
-    </div>
+    <>
+      {/* Dark full-width banner with article title */}
+      <section className={styles.banner}>
+        <Container>
+          <h1 className={styles.banner__title}>{article.title}</h1>
+          <ArticleAuthor article={article} />
+        </Container>
+      </section>
+
+      {/* Article body – rendered as Markdown */}
+      <Container>
+        <div className={styles.content}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {article.body}
+          </ReactMarkdown>
+        </div>
+
+        {/* Tags */}
+        <ArticleTags article={article} />
+
+        {/* Bottom author + favorite button */}
+        <div className={styles.bottomAuthorSection}>
+          <ArticleAuthor article={article} />
+          <button className={styles.favoriteButton}>Favorite article</button>
+        </div>
+      </Container>
+    </>
   );
 }
