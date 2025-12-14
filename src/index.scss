@@ -45,11 +45,12 @@ a {
   --green-primary: #5cb85c; // Main green for buttons, accents
   --green-hover: #4aa34a; // Darker green for hover states
   --green-dark: #61bb61; // Alternative green shade
+  --light-green-hover: rgba(92, 184, 92, 0.1); // light green tint on hover
   --gray-text: #aaaaaa; // Light gray for secondary text
   --black-title: #333333; // Dark gray for titles and main text
   --white: #ffffff; // Pure white
   --border-light: #e6e6e6; // Light border color
-  --bg-gray: #f5f5f5; // Light gray background for elements
+  // --bg-gray: #f5f5f5; // Light gray background for elements
 }
 
 /* Utility classes – reusable for common styles across the app */

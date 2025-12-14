@@ -29,7 +29,7 @@
     font:
       700 56px 'Titillium Web',
       sans-serif;
-    color: white;
+    color: var(--white);
     margin: 0 0 -8px 0; // pulls subtitle closer
 
     // White underline below the title
@@ -40,7 +40,7 @@
       right: 0;
       bottom: 13px;
       height: 2px;
-      background-color: white;
+      background-color: var(--white);
     }
   }
 
@@ -48,7 +48,7 @@
     font:
       400 24px 'Source Sans Pro',
       sans-serif;
-    color: white;
+    color: var(--white);
     margin: 0;
     opacity: 0.9;
   }

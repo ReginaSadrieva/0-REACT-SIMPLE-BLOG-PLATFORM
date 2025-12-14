@@ -25,7 +25,7 @@
   height: 44px;
   border: 1px solid var(--green-primary);
   border-radius: 0; // sharp corners as in design
-  background-color: white;
+  background-color: var(--white);
   color: var(--green-primary);
   font:
     400 12.8px 'Source Sans Pro',
@@ -37,10 +37,10 @@
 
   &--active {
     background-color: var(--green-primary);
-    color: white;
+    color: var(--white);
   }
 
   &:hover:not(&--active) {
-    background-color: rgba(92, 184, 92, 0.1); // light green tint on hover
+    background-color: var(--light-green-hover);
   }
 }

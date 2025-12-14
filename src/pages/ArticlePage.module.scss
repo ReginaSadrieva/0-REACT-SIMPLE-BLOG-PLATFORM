@@ -12,7 +12,7 @@
 .banner {
   width: 100%;
   height: 282px;
-  background-color: black;
+  background-color: var(--black-title);
   display: flex;
   align-items: center;
   margin-top: 118px;
@@ -21,7 +21,7 @@
     font:
       700 46px 'Titillium Web',
       sans-serif;
-    color: white;
+    color: var(--white);
     margin: 0;
     line-height: 1.3;
     word-break: break-word;
@@ -49,7 +49,7 @@
   font:
     400 16px 'Source Sans Pro',
     sans-serif;
-  color: black;
+  color: var(--black-title);
   line-height: 1.6;
   text-align: left;
 
