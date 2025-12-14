@@ -60,22 +60,6 @@
   }
 }
 
-.favoriteButton {
-  height: 32px;
-  padding: 0 16px;
-  background-color: var(--green-primary);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font:
-    400 12.8px 'Source Sans Pro',
-    sans-serif;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .bottomAuthorSection {
   display: flex;
   justify-content: center;

@@ -1,0 +1,36 @@
+// ------------------------------------------------------------------
+// Purpose: Styles for reusable green button.
+//
+// Visual details (Figma):
+//   • Width: 112px (fixed for this button, but can be prop in future)
+//   • Height: 32px
+//   • Background: #5cb85c (var(--green-primary)), white text
+//   • Border radius: 8px
+//   • Font: Source Sans Pro Regular 12.8px, centered
+//   • Hover: darker green (#4aa34a, var(--green-hover))
+// ------------------------------------------------------------------
+
+.button {
+  width: 112px;
+  height: 32px;
+  background-color: var(--green-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font:
+    400 12.8px 'Source Sans Pro',
+    sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: var(--green-hover);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

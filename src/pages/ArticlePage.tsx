@@ -21,6 +21,7 @@ import ArticleTags from '../components/article/ArticleTags';
 import Container from '../components/common/Container';
 import Loader from '../components/common/Loader';
 import { fetchArticles, type Article } from '../api/articles';
+import Button from '../components/button/Button';
 
 export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -70,7 +71,7 @@ export default function ArticlePage() {
         {/* Bottom author + favorite button */}
         <div className={styles.bottomAuthorSection}>
           <ArticleAuthor article={article} />
-          <button className={styles.favoriteButton}>Favorite article</button>
+          <Button text="Favorite article" disabled={true} />
         </div>
       </Container>
     </>
