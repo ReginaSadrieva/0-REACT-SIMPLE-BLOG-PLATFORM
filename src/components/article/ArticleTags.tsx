@@ -15,7 +15,7 @@
 
 import styles from './ArticleTags.module.scss';
 import type { Article } from '../../api/articles';
-
+import { Tag } from '../tags/PopularTags';
 /**
  * Props for ArticleTags.
  * We pass the full article because tagList is part of it.
@@ -37,9 +37,7 @@ export default function ArticleTags({ article }: Props) {
     <div className={styles.tags}>
       {/* Safe mapping – tagList can be empty, but never undefined is prevented by ?. */}
       {article.tagList?.map((tag) => (
-        <span key={tag} className={styles.tags__item}>
-          {tag}
-        </span>
+        <Tag key={tag} tag={tag} />
       ))}
     </div>
   );

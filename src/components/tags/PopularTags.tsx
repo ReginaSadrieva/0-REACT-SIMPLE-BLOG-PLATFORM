@@ -45,11 +45,18 @@ export default function PopularTags() {
       {/* List of tag pills */}
       <div className={styles.popularTags__list}>
         {tags.map((tag) => (
-          <span key={tag} className={styles.popularTags__tag}>
-            {tag}
-          </span>
+          <Tag key={tag} tag={tag} />
         ))}
       </div>
     </aside>
+  );
+}
+
+export function Tag({ tag }: { tag: string | null }) {
+  if (!tag) return null;
+  return (
+    <span key={tag} className={styles.popularTags__tag}>
+      {tag}
+    </span>
   );
 }
