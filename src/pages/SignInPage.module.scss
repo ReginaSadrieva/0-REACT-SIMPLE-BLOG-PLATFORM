@@ -1,0 +1,38 @@
+// ------------------------------------------------------------------
+// Purpose: Styles for Sign In page – identical to Sign Up page layout.
+//
+// Layout (Figma):
+//   • Title centered, 102px from header
+//   • Form centered
+//   • Inputs with 16px vertical gap
+//   • Button right-aligned under inputs with 16px gap
+// ------------------------------------------------------------------
+
+.signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 102px; // 102px from header
+
+  &__title {
+    font:
+      700 46px 'Titillium Web',
+      sans-serif;
+    color: var(--black-title);
+    margin: 0 0 16px 0;
+    text-align: center;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; // 16px between inputs
+  }
+
+  &__buttonWrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

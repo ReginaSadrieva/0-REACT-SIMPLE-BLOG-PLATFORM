@@ -1,0 +1,34 @@
+// ------------------------------------------------------------------
+// Purpose: Styles for reusable input field in auth forms.
+//
+// Visual details (Figma):
+//   • Fixed width 480px (full width in container)
+//   • Height 48px
+//   • Border 1px #aaaaaa, radius 8px
+//   • Padding 12px vertical, 24px horizontal
+//   • Placeholder: 16px Source Sans Pro, left-aligned
+// ------------------------------------------------------------------
+
+.input {
+  width: 100%; // 480px in container
+  max-width: 480px;
+  height: 48px;
+  padding: 12px 24px;
+  border: 1px solid var(--gray-text);
+  border-radius: 8px;
+  font:
+    400 16px 'Source Sans Pro',
+    sans-serif;
+  color: var(--black-title);
+  background-color: var(--white);
+
+  &::placeholder {
+    color: var(--gray-text);
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--green-primary);
+  }
+}

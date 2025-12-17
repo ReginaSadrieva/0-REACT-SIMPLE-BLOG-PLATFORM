@@ -19,6 +19,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import Layout from './components/layout/Layout';
 import ArticlePage from './pages/ArticlePage';
+import SignUpPage from './pages/SignUpPage';
+import SignInPage from './pages/SignInPage';
 
 function App() {
   return (
@@ -34,6 +36,10 @@ function App() {
 
           {/* Future route for individual articles */}
           <Route path="articles/:slug" element={<ArticlePage />} />
+          {/* Sign Up page — */}
+          <Route path="sign-up" element={<SignUpPage />} />
+          {/* Sign In page — */}
+          <Route path="sign-in" element={<SignInPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

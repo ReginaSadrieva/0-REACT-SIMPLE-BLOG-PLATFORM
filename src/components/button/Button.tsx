@@ -19,12 +19,23 @@ import styles from './Button.module.scss';
 interface Props {
   text: string; // Button label (e.g. "Favorite article")
   onClick?: () => void; // Optional click handler (for future functionality)
-  disabled?: boolean; // Optional disabled state (default false)
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset'; // Optional disabled state (default false)
 }
 
-export default function Button({ text, onClick, disabled = false }: Props) {
+export default function Button({
+  text,
+  onClick,
+  disabled = false,
+  type = 'button',
+}: Props) {
   return (
-    <button className={styles.button} onClick={onClick} disabled={disabled}>
+    <button
+      className={styles.button}
+      onClick={onClick}
+      disabled={disabled}
+      type={type || 'button'}
+    >
       {text}
     </button>
   );

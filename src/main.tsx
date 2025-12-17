@@ -14,6 +14,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss'; // Global styles, fonts, CSS variables
 import App from './App'; // Root component with routing
+import { AuthProvider } from './context/AuthContext';
 
 // Find the root element in index.html
 const rootElement = document.getElementById('root');
@@ -21,7 +22,9 @@ const rootElement = document.getElementById('root');
 if (rootElement) {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </React.StrictMode>
   );
 } else {
