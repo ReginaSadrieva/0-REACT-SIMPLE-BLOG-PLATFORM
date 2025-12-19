@@ -21,6 +21,7 @@ import Layout from './components/layout/Layout';
 import ArticlePage from './pages/ArticlePage';
 import SignUpPage from './pages/SignUpPage';
 import SignInPage from './pages/SignInPage';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
           <Route path="sign-up" element={<SignUpPage />} />
           {/* Sign In page — */}
           <Route path="sign-in" element={<SignInPage />} />
+          {/* User Settings page — */}
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

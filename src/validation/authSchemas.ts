@@ -39,3 +39,21 @@ export const signInSchema = z.object({
 
 export type SignUpFormData = z.infer<typeof signUpSchema>;
 export type SignInFormData = z.infer<typeof signInSchema>;
+
+/**
+ * User Settings form validation schema
+ */
+export const profileSchema = z.object({
+  username: z.string().min(1, 'Username is required'),
+  email: z.string().email('Invalid email address'),
+  password: z
+    .string()
+    .min(6, 'Password must be at least 6 characters')
+    .max(40)
+    .optional()
+    .or(z.literal('')),
+  bio: z.string().optional(),
+  image: z.string().url('Must be a valid URL').optional().or(z.literal('')),
+});
+
+export type ProfileFormData = z.infer<typeof profileSchema>;
