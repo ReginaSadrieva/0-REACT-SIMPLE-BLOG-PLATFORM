@@ -27,68 +27,71 @@ export default function Header() {
   const { isAuthenticated, user, logout } = useAuth();
 
   return (
-    <Container>
-      <header className={styles.header}>
-        <div className={styles.header__inner}>
-          {/* Realworld green logo on the left */}
-          <NavLink to="/" className={styles.header__logo}>
-            Realworld Blog
-          </NavLink>
-
-          {/* Navigation on the right – conditional based on auth state */}
-          <nav className={styles.header__nav}>
-            <NavLink to="/" className={styles.header__navLink}>
-              Home
+    <>
+      <Container>
+        <header className={styles.header}>
+          <div className={styles.header__inner}>
+            {/* Realworld green logo on the left */}
+            <NavLink to="/" className={styles.header__logo}>
+              Realworld Blog
             </NavLink>
 
-            {isAuthenticated ? (
-              <>
-                <NavLink to="/new-post" className={styles.header__navLink}>
-                  <img
-                    src={newPostIcon}
-                    alt=""
-                    className={styles.header__navIcon}
-                  />
-                  New Post
-                </NavLink>
+            {/* Navigation on the right – conditional based on auth state */}
+            <nav className={styles.header__nav}>
+              <NavLink to="/" className={styles.header__navLink}>
+                Home
+              </NavLink>
 
-                <NavLink to="/settings" className={styles.header__navLink}>
-                  <img
-                    src={settingsIcon}
-                    alt=""
-                    className={styles.header__navIcon}
-                  />
-                  Settings
-                </NavLink>
+              {isAuthenticated ? (
+                <>
+                  <NavLink to="/new-post" className={styles.header__navLink}>
+                    <img
+                      src={newPostIcon}
+                      alt=""
+                      className={styles.header__navIcon}
+                    />
+                    New Post
+                  </NavLink>
 
-                <NavLink to="/profile" className={styles.header__navLink}>
-                  <img
-                    src={profileIcon}
-                    alt=""
-                    className={styles.header__navIcon}
-                  />
-                  {user?.username || 'User'}
-                </NavLink>
+                  <NavLink to="/settings" className={styles.header__navLink}>
+                    <img
+                      src={settingsIcon}
+                      alt=""
+                      className={styles.header__navIcon}
+                    />
+                    Settings
+                  </NavLink>
 
-                {/* Log Out button (text only, no icon) */}
-                <button onClick={logout} className={styles.header__navLink}>
-                  Log Out
-                </button>
-              </>
-            ) : (
-              <>
-                <NavLink to="/sign-in" className={styles.header__navLink}>
-                  Sign In
-                </NavLink>
+                  <NavLink to="/profile" className={styles.header__navLink}>
+                    <img
+                      src={profileIcon}
+                      alt=""
+                      className={styles.header__navIcon}
+                    />
+                    {user?.username || 'User'}
+                  </NavLink>
 
-                <NavLink to="/sign-up" className={styles.header__navLink}>
-                  Sign Up
-                </NavLink>
-              </>
-            )}
-          </nav>
-        </div>
-      </header>
-    </Container>
+                  {/* Log Out button (text only, no icon) */}
+                  <button onClick={logout} className={styles.header__navLink}>
+                    Log Out
+                  </button>
+                </>
+              ) : (
+                <>
+                  <NavLink to="/sign-in" className={styles.header__navLink}>
+                    Sign In
+                  </NavLink>
+
+                  <NavLink to="/sign-up" className={styles.header__navLink}>
+                    Sign Up
+                  </NavLink>
+                </>
+              )}
+            </nav>
+          </div>
+        </header>
+      </Container>
+      <hr className={styles.underline} />
+    </>
   );
 }

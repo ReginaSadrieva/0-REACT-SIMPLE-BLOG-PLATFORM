@@ -58,6 +58,9 @@
     margin-top: 16px;
     margin-bottom: 24px;
   }
+  & > * {
+    white-space: pre-wrap; // text alignment bug fix
+  }
 }
 
 .bottomAuthorSection {
