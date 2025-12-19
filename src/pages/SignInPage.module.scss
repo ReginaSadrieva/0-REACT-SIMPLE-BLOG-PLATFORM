@@ -35,4 +35,15 @@
     display: flex;
     justify-content: flex-end;
   }
+  &__buttonWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px; // 16px from last input
+  }
+
+  .errorText {
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
+  }
 }
