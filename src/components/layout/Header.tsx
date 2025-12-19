@@ -22,6 +22,7 @@ import settingsIcon from '../../assets/icons/settings.svg';
 import profileIcon from '../../assets/icons/profile.svg';
 import Container from '../common/Container';
 import { useAuth } from '../../hooks/useAuth';
+import Button from '../button/Button';
 
 export default function Header() {
   const { isAuthenticated, user, logout } = useAuth();
@@ -72,9 +73,7 @@ export default function Header() {
                   </NavLink>
 
                   {/* Log Out button (text only, no icon) */}
-                  <button onClick={logout} className={styles.header__navLink}>
-                    Log Out
-                  </button>
+                  <Button text="Log Out" onClick={logout} />
                 </>
               ) : (
                 <>
