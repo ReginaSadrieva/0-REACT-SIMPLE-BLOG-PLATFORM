@@ -23,21 +23,20 @@ import profileIcon from '../../assets/icons/profile.svg';
 import Container from '../common/Container';
 import { useAuth } from '../../hooks/useAuth';
 import Button from '../button/Button';
+import { useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const { isAuthenticated, user, logout } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <>
       <Container>
         <header className={styles.header}>
           <div className={styles.header__inner}>
-            {/* Realworld green logo on the left */}
             <NavLink to="/" className={styles.header__logo}>
               Realworld Blog
             </NavLink>
-
-            {/* Navigation on the right – conditional based on auth state */}
             <nav className={styles.header__nav}>
               <NavLink to="/" className={styles.header__navLink}>
                 Home
@@ -72,8 +71,13 @@ export default function Header() {
                     {user?.username || 'User'}
                   </NavLink>
 
-                  {/* Log Out button (text only, no icon) */}
-                  <Button text="Log Out" onClick={logout} />
+                  <Button
+                    text="Log Out"
+                    onClick={() => {
+                      logout();
+                      navigate('/');
+                    }}
+                  ></Button>
                 </>
               ) : (
                 <>
@@ -86,7 +90,7 @@ export default function Header() {
                   </NavLink>
                 </>
               )}
-            </nav>
+            </nav>{' '}
           </div>
         </header>
       </Container>

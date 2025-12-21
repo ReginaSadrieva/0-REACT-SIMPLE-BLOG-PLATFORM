@@ -36,4 +36,18 @@
     font-size: 14px;
     margin-top: 4px;
   }
+
+  .bioTextarea {
+    width: 100%;
+    max-width: 480px;
+    height: 100px; // bigger for bio
+    padding: 12px 24px;
+    border: 1px solid var(--gray-text);
+    border-radius: 8px;
+    font:
+      400 16px 'Source Sans Pro',
+      sans-serif;
+    color: var(--black-title);
+    resize: vertical; // allow resizing
+  }
 }

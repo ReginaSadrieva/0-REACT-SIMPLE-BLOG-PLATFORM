@@ -43,7 +43,7 @@ export type SignInFormData = z.infer<typeof signInSchema>;
 /**
  * User Settings form validation schema
  */
-export const profileSchema = z.object({
+export const settingsSchema = z.object({
   username: z.string().min(1, 'Username is required'),
   email: z.string().email('Invalid email address'),
   password: z
@@ -56,4 +56,4 @@ export const profileSchema = z.object({
   image: z.string().url('Must be a valid URL').optional().or(z.literal('')),
 });
 
-export type ProfileFormData = z.infer<typeof profileSchema>;
+export type SettingsFormData = z.infer<typeof settingsSchema>;

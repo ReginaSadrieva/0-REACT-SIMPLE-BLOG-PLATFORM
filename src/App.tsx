@@ -21,7 +21,7 @@ import Layout from './components/layout/Layout';
 import ArticlePage from './pages/ArticlePage';
 import SignUpPage from './pages/SignUpPage';
 import SignInPage from './pages/SignInPage';
-import ProfilePage from './pages/ProfilePage';
+import SettingsPage from './pages/SettingsPage';
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
           {/* Sign In page — */}
           <Route path="sign-in" element={<SignInPage />} />
           {/* User Settings page — */}
-          <Route path="profile" element={<ProfilePage />} />
+          <Route path="settings" element={<SettingsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

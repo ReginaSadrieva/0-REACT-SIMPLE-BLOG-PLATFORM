@@ -6,17 +6,20 @@
 
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import styles from './ProfilePage.module.scss';
+import styles from './SettingsPage.module.scss';
 import Container from '../components/common/Container';
 import Input from '../components/form/Input';
 import Button from '../components/button/Button';
-import { profileSchema, type ProfileFormData } from '../validation/authSchemas';
+import {
+  settingsSchema,
+  type SettingsFormData,
+} from '../validation/authSchemas';
 import { updateUser } from '../api/auth';
 import { useAuth } from '../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-export default function ProfilePage() {
+export default function SettingsPage() {
   const { user, token, login } = useAuth(); // token for API call, login to update user after success
   const navigate = useNavigate();
 
@@ -25,8 +28,8 @@ export default function ProfilePage() {
     handleSubmit,
     formState: { errors, isSubmitting },
     setError,
-  } = useForm<ProfileFormData>({
-    resolver: zodResolver(profileSchema),
+  } = useForm<SettingsFormData>({
+    resolver: zodResolver(settingsSchema),
     defaultValues: {
       username: user?.username || '',
       email: user?.email || '',
@@ -36,7 +39,7 @@ export default function ProfilePage() {
     },
   });
 
-  const onSubmit = async (data: ProfileFormData) => {
+  const onSubmit = async (data: SettingsFormData) => {
     if (!token) return;
 
     try {
@@ -55,7 +58,7 @@ export default function ProfilePage() {
       if (axios.isAxiosError(err) && err.response?.data?.errors) {
         const serverErrors = err.response.data.errors;
         Object.keys(serverErrors).forEach((field) => {
-          setError(field as keyof ProfileFormData, {
+          setError(field as keyof SettingsFormData, {
             message: Array.isArray(serverErrors[field])
               ? serverErrors[field].join(', ')
               : serverErrors[field],
@@ -90,8 +93,12 @@ export default function ProfilePage() {
             <p className={styles.errorText}>{errors.email.message}</p>
           )}
 
-          {/* Bio — bigger input (textarea-like, but Input is fine if you want single line) */}
-          <Input placeholder="Input your comment" {...register('bio')} />
+          {/* Bio as textarea (bigger input) */}
+          <textarea
+            placeholder="Bio"
+            {...register('bio')}
+            className={styles.bioTextarea}
+          />
           {errors.bio && (
             <p className={styles.errorText}>{errors.bio.message}</p>
           )}
