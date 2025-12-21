@@ -49,5 +49,9 @@
       sans-serif;
     color: var(--black-title);
     resize: vertical; // allow resizing
+    &:focus {
+      outline: none;
+      border-color: var(--green-primary);
+    }
   }
 }

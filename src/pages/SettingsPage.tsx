@@ -46,8 +46,8 @@ export default function SettingsPage() {
       const updatedUser = await updateUser(token, {
         username: data.username,
         email: data.email,
-        bio: data.bio || undefined,
-        image: data.image || undefined,
+        bio: data.bio || '',
+        image: data.image || '',
         password: data.password || undefined, // only send if filled
       });
 
