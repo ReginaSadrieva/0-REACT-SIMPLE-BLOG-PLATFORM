@@ -88,6 +88,14 @@ export default function Header() {
                   <NavLink to="/sign-up" className={styles.header__navLink}>
                     Sign Up
                   </NavLink>
+                  <NavLink to="/profile" className={styles.header__navLink}>
+                    <img
+                      src={profileIcon}
+                      alt=""
+                      className={styles.header__navIcon}
+                    />
+                    {user?.username || 'User'}
+                  </NavLink>
                 </>
               )}
             </nav>{' '}

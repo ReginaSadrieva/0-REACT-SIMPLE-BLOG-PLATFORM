@@ -77,14 +77,10 @@ export const updateUser = async (
     image: string;
   }>
 ): Promise<User> => {
-  const response = await axios.put(
-    `${API_URL}/user`,
-    { user: userData },
-    {
-      headers: {
-        Authorization: `Token ${token}`,
-      },
-    }
-  );
+  const response = await axios.put(`${API_URL}/user`, userData, {
+    headers: {
+      Authorization: `Token ${token}`,
+    },
+  });
   return response.data.user;
 };

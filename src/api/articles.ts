@@ -57,13 +57,15 @@ interface ApiResponse {
  */
 export const fetchArticles = async (
   page: number = 1,
-  limit: number = 10
+  limit: number = 10,
+  filters?: { author?: string }
 ): Promise<{ articles: Article[]; articlesCount: number }> => {
   try {
     const response = await axios.get<ApiResponse>(`${API_URL}/articles`, {
       params: {
         limit,
         offset: (page - 1) * limit, // calculate offset for the requested page
+        ...filters,
       },
     });
 

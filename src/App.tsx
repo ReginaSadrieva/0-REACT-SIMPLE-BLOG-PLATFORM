@@ -22,6 +22,7 @@ import ArticlePage from './pages/ArticlePage';
 import SignUpPage from './pages/SignUpPage';
 import SignInPage from './pages/SignInPage';
 import SettingsPage from './pages/SettingsPage';
+import UserProfilePage from './pages/UserProfilePage';
 
 function App() {
   return (
@@ -43,6 +44,8 @@ function App() {
           <Route path="sign-in" element={<SignInPage />} />
           {/* User Settings page — */}
           <Route path="settings" element={<SettingsPage />} />
+          {/* User Profile page — */}
+          <Route path="profile" element={<UserProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
