@@ -91,7 +91,7 @@ export default function ArticlePage() {
           <ArticleAuthor article={article} />
 
           <div className={styles.articleButtons}>
-            <Button text="Favorite article" disabled={true} />
+            {/* <Button text="Favorite article" disabled={true} /> */}
 
             {isAuthor && (
               <div className={styles.articleActions}>
