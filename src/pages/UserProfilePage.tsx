@@ -54,7 +54,7 @@ export default function UserProfilePage() {
 
         <ArticleList articles={articles} />
         <Pagination
-          totalPages={articlesCount}
+          totalPages={Math.ceil(articlesCount / 10)}
           currentPage={currentPage}
           onPageChange={setCurrentPage}
         />
