@@ -8,12 +8,11 @@
 //   • Easy to test and extend (e.g. add filters, "Your Feed" in future phases)
 //
 // How it works:
-//   • Uses useState for articles, loading, error, currentPage, totalPages
-//   • loadPage async function fetches data from API using fetchArticles
-//   • useEffect loads the first page on mount
-//   • Conditional rendering: Loader during fetch, error message on fail, list on success
-//   • Maps articles to ArticleCard components
-//   • Pagination component with onPageChange to load new page
+//   • Fetches articles on mount and on page change
+//   • Shows Loader during fetch
+//   • Shows error if fetch fails
+//   • Renders ArticleCard for each article
+//   • Renders Pagination with total pages calculated from articlesCount
 //   • Server-side pagination (offset/limit) for efficiency – no client-side slicing
 // ------------------------------------------------------------------
 
@@ -24,18 +23,13 @@ import Loader from '../common/Loader';
 import styles from './ArticleList.module.scss';
 import { fetchArticles, type Article } from '../../api/articles';
 
-/**
- * ArticleList – fetches and renders a paginated list of articles from the API.
- *
- * Features:
- *   • Asynchronous fetching with loading spinner
- *   • Error handling with simple message
- *   • Server-side pagination (calls API for each page)
- *   • Re-renders on page change
- */
-export default function ArticleList() {
+interface ArticleListProps {
+  articles?: Article[];
+}
+
+export default function ArticleList({ articles }: ArticleListProps) {
   // State for storing fetched articles
-  const [articles, setArticles] = useState<Article[]>([]);
+  const [fetchedArticles, setFetchedArticles] = useState<Article[]>([]);
 
   // State for loading indicator
   const [loading, setLoading] = useState(true);
@@ -58,7 +52,7 @@ export default function ArticleList() {
     setError(false);
     try {
       const { articles, articlesCount } = await fetchArticles(page);
-      setArticles(articles);
+      setFetchedArticles(articles);
       setTotalPages(Math.ceil(articlesCount / 10)); // Assuming limit=10
       setCurrentPage(page);
     } catch {
@@ -78,12 +72,14 @@ export default function ArticleList() {
 
   // Show error if fetch failed
   if (error)
-    return <div className={styles.error}>OOOOPS...ARTICLES LOADING ERROR</div>;
+    return <div className={styles.error}>OOPS...ARTICLES LOADING ERROR</div>;
+
+  const displayArticles = articles || fetchedArticles;
 
   // Render list and pagination on success
   return (
     <div className={styles.list}>
-      {articles.map((article) => (
+      {displayArticles.map((article) => (
         <ArticleCard key={article.slug} article={article} />
       ))}
       <Pagination

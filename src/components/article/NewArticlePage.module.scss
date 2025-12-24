@@ -1,0 +1,15 @@
+.newPost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 102px;
+
+  &__title {
+    font:
+      700 46px 'Titillium Web',
+      sans-serif;
+    color: var(--black-title);
+    margin: 0 0 16px 0;
+    text-align: center;
+  }
+}

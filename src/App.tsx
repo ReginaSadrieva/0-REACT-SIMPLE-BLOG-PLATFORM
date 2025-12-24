@@ -23,6 +23,9 @@ import SignUpPage from './pages/SignUpPage';
 import SignInPage from './pages/SignInPage';
 import SettingsPage from './pages/SettingsPage';
 import UserProfilePage from './pages/UserProfilePage';
+import PrivateRoute from './components/PrivateRoute';
+import NewArticlePage from './pages/NewArticlePage';
+import EditArticlePage from './pages/EditArticlePage';
 
 function App() {
   return (
@@ -46,6 +49,11 @@ function App() {
           <Route path="settings" element={<SettingsPage />} />
           {/* User Profile page — */}
           <Route path="profile" element={<UserProfilePage />} />
+          {/* Protected routes */}
+          <Route element={<PrivateRoute />}>
+            <Route path="new-post" element={<NewArticlePage />} />
+            <Route path="articles/:slug/edit" element={<EditArticlePage />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

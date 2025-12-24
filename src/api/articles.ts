@@ -1,5 +1,5 @@
 // ------------------------------------------------------------------
-// Purpose: Centralised API service for fetching articles from the RealWorld backend
+// Purpose: Centralized API service for fetching articles from the RealWorld backend
 // Why here: All API-related logic is isolated in one place → easy to maintain,
 // test, mock, or replace with another backend in the future.
 // How it works:
@@ -10,6 +10,7 @@
 // ------------------------------------------------------------------
 
 import axios from 'axios';
+import type { ArticleFormData } from '../validation/articleSchemas';
 
 /**
  * Base URL for the RealWorld API used in this project.
@@ -85,4 +86,51 @@ export const fetchArticles = async (
     // Any other error – re-throw so the UI can show an error state
     throw error;
   }
+};
+// export const createArticle = async (token: string, data: ArticleFormData) => {
+//   await axios.post(
+//     `${API_URL}/articles`,
+//     { article: data },
+//     { headers: { Authorization: `Token ${token}` } }
+//   );
+// };
+export const createArticle = async (token: string, data: ArticleFormData) => {
+  const articleData = {
+    title: data.title,
+    description: data.description,
+    body: data.body,
+    tagList: data.tagList
+      ? data.tagList.split(',').map((tag) => tag.trim())
+      : [],
+  };
+
+  await axios.post(
+    `${API_URL}/articles`,
+    { article: articleData },
+    { headers: { Authorization: `Token ${token}` } }
+  );
+};
+export const fetchArticle = async (slug: string) => {
+  const response = await axios.get<{ article: Article }>(
+    `${API_URL}/articles/${slug}`
+  );
+  return response.data.article;
+};
+
+export const updateArticle = async (
+  token: string,
+  slug: string,
+  data: ArticleFormData
+) => {
+  await axios.put(
+    `${API_URL}/articles/${slug}`,
+    { article: data },
+    { headers: { Authorization: `Token ${token}` } }
+  );
+};
+
+export const deleteArticle = async (token: string, slug: string) => {
+  await axios.delete(`${API_URL}/articles/${slug}`, {
+    headers: { Authorization: `Token ${token}` },
+  });
 };
