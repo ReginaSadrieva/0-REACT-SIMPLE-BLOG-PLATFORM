@@ -77,3 +77,13 @@
   font-size: 24px;
   color: red;
 }
+.articleButtons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.articleActions {
+  display: flex;
+  gap: 12px;
+}

@@ -12,7 +12,7 @@
 // ------------------------------------------------------------------
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import styles from './ArticlePage.module.scss';
@@ -20,11 +20,14 @@ import ArticleAuthor from '../components/article/ArticleAuthor';
 import ArticleTags from '../components/article/ArticleTags';
 import Container from '../components/common/Container';
 import Loader from '../components/common/Loader';
-import { fetchArticles, type Article } from '../api/articles';
+import { fetchArticles, deleteArticle, type Article } from '../api/articles';
 import Button from '../components/button/Button';
+import { useAuth } from '../hooks/useAuth';
 
 export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+  const { user, token } = useAuth();
   const [article, setArticle] = useState<Article | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -43,6 +46,21 @@ export default function ArticlePage() {
     };
     if (slug) loadArticle();
   }, [slug]);
+
+  const isAuthor = user && article?.author.username === user.username;
+
+  const handleDelete = async () => {
+    if (!token || !slug) return;
+
+    const confirmed = window.confirm(
+      'Are you sure you want to delete this article?'
+    );
+
+    if (!confirmed) return;
+
+    await deleteArticle(token, slug);
+    navigate('/');
+  };
 
   if (loading) return <Loader />;
   if (!article) return <div className={styles.error}>Article not found</div>;
@@ -71,7 +89,20 @@ export default function ArticlePage() {
         {/* Bottom author + favorite button */}
         <div className={styles.bottomAuthorSection}>
           <ArticleAuthor article={article} />
-          <Button text="Favorite article" disabled={true} />
+
+          <div className={styles.articleButtons}>
+            <Button text="Favorite article" disabled={true} />
+
+            {isAuthor && (
+              <div className={styles.articleActions}>
+                <Button
+                  text="Edit Article"
+                  onClick={() => navigate(`/articles/${article.slug}/edit`)}
+                />
+                <Button text="Delete Article" onClick={handleDelete} />
+              </div>
+            )}
+          </div>
         </div>
       </Container>
     </>

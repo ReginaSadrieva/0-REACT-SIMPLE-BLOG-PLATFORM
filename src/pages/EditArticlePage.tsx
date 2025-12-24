@@ -8,7 +8,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import styles from './EditArticlePage.module.scss';
 import Container from '../components/common/Container';
 import ArticleForm from '../components/article/ArticleForm';
-import { fetchArticle, updateArticle, deleteArticle } from '../api/articles';
+import { fetchArticle, updateArticle } from '../api/articles';
 import { useAuth } from '../hooks/useAuth';
 import type { ArticleFormData } from '../../src/validation/articleSchemas';
 
@@ -40,15 +40,6 @@ export default function EditArticlePage() {
     }
   };
 
-  const onDelete = async () => {
-    if (window.confirm('Delete article?')) {
-      if (token && slug) {
-        await deleteArticle(token, slug);
-        navigate('/');
-      }
-    }
-  };
-
   return (
     <Container>
       <div className={styles.editPost}>
@@ -58,9 +49,6 @@ export default function EditArticlePage() {
         ) : (
           <p>Loading...</p>
         )}
-        <button onClick={onDelete} className={styles.deleteButton}>
-          Delete Article
-        </button>
       </div>
     </Container>
   );
