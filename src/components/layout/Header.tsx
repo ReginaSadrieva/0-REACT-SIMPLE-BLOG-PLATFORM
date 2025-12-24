@@ -64,10 +64,11 @@ export default function Header() {
 
                   <NavLink to="/profile" className={styles.header__navLink}>
                     <img
-                      src={profileIcon}
-                      alt=""
+                      src={user?.image || profileIcon}
+                      alt={user?.username || 'User'}
                       className={styles.header__navIcon}
                     />
+
                     {user?.username || 'User'}
                   </NavLink>
 

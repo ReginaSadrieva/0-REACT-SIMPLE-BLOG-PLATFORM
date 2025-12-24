@@ -38,8 +38,9 @@ export default function ArticleAuthor({ article }: Props) {
   return (
     <div className={styles.author}>
       {/* Author avatar – static SVG placed on green background (styled in SCSS) */}
+
       <img
-        src={profileIcon}
+        src={article.author.image || profileIcon}
         alt={`${article.author.username}'s avatar`}
         className={styles.author__avatar}
       />
