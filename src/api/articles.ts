@@ -30,6 +30,7 @@ export interface Article {
   tagList: string[]; // array of tags
   createdAt: string; // ISO date string
   favoritesCount: number; // number of likes
+  favorited: boolean;
   author: {
     username: string;
     image: string; // URL to the author's avatar
@@ -133,4 +134,27 @@ export const deleteArticle = async (token: string, slug: string) => {
   await axios.delete(`${API_URL}/articles/${slug}`, {
     headers: { Authorization: `Token ${token}` },
   });
+};
+
+export const favoriteArticle = async (token: string, slug: string) => {
+  const response = await axios.post<{ article: Article }>(
+    `${API_URL}/articles/${slug}/favorite`,
+    {},
+    {
+      headers: { Authorization: `Token ${token}` },
+    }
+  );
+
+  return response.data.article;
+};
+
+export const unfavoriteArticle = async (token: string, slug: string) => {
+  const response = await axios.delete<{ article: Article }>(
+    `${API_URL}/articles/${slug}/favorite`,
+    {
+      headers: { Authorization: `Token ${token}` },
+    }
+  );
+
+  return response.data.article;
 };

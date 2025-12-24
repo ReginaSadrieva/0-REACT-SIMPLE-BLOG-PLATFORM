@@ -76,20 +76,6 @@ export default function ArticleList({ articles }: ArticleListProps) {
 
   const displayArticles = articles || fetchedArticles;
 
-  // Render list and pagination on success
-  // return (
-  //   <div className={styles.list}>
-  //     {displayArticles.map((article) => (
-  //       <ArticleCard key={article.slug} article={article} />
-  //     ))}
-  //     <Pagination
-  //       currentPage={currentPage}
-  //       totalPages={totalPages}
-  //       onPageChange={loadPage}
-  //     />
-  //   </div>
-  // );
-
   return (
     <div className={styles.list}>
       {displayArticles.map((article) => (
