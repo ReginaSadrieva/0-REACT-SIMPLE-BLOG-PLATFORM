@@ -22,4 +22,4 @@ Let harvest come.
 Let the craft become mine.
 
 Unseal the code:
-https://reginasadrieva.github.io/0-REACT-SIMPLE-BLOG-PLATFORM/
+https://0-react-simple-blog-platform.vercel.app/
