@@ -29,7 +29,7 @@ import EditArticlePage from './pages/EditArticlePage';
 
 function App() {
   return (
-    <BrowserRouter basename="/0-REACT-SIMPLE-BLOG-PLATFORM">
+    <BrowserRouter>
       <Routes>
         {/* All pages use the same Layout (Header + Container wrapper) */}
         <Route path="/" element={<Layout />}>
