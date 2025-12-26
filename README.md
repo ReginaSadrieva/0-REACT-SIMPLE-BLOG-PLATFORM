@@ -21,5 +21,26 @@ Let all barriers fall.
 Let harvest come.  
 Let the craft become mine.
 
-Unseal the code:
+## ᚦ Live Demo
+
+The project is deployed on **Vercel** and fully functional:
+
 https://0-react-simple-blog-platform.vercel.app/
+
+## ᚱ Running the Project Locally
+
+```bash
+1. Clone the repository
+git clone https://github.com/ReginaSadrieva/0-REACT-SIMPLE-BLOG-PLATFORM.git
+cd 0-REACT-SIMPLE-BLOG-PLATFORM
+
+2. Install dependencies
+npm install
+
+3. Start the development server
+npm run dev
+
+4. Open in browser
+http://localhost:5173
+
+```
